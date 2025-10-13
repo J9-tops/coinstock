@@ -1,3 +1,3 @@
 export const environment = {
-  apiUrl: 'https://api.coingecko.com/api/v3',
+  apiUrl: `${process.env['API_URL']}`,
 };

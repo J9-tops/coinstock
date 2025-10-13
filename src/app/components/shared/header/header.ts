@@ -1,15 +1,16 @@
 import { GlobalService } from '@/app/services/global';
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-header',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './header.html',
   styleUrl: './header.css',
 })
 export class Header implements OnInit {
-  headerData!: {
-    data: {
+  headerData?: {
+    data?: {
       active_cryptocurrencies: number;
       upcoming_icos: number;
       ended_icos: number;
