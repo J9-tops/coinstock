@@ -2,16 +2,18 @@
   <div class="flex gap-3 items-center text-xs">
     <p class="flex items-center gap-1">
       <span class="text-[#6F7188]">Coins:</span>
-      <span class="font-bold text-[#4D4F5C]">18,463</span>
+      <span class="font-bold text-[#4D4F5C]">{{ headerData.data.active_cryptocurrencies }}</span>
     </p>
     <p class="flex items-center gap-1">
       <span class="text-[#6F7188]">Exchanges:</span>
-      <span class="font-bold text-[#4D4F5C]">1,360</span>
+      <span class="font-bold text-[#4D4F5C]">{{ headerData.data.ended_icos }}</span>
     </p>
     <div class="flex items-center gap-1">
       <p class="text-[#6F7188]">Market Cap:</p>
       <p class="flex items-center gap-1">
-        <span class="font-bold text-[#4D4F5C]">$3.852T</span>
+        <span class="font-bold text-[#4D4F5C]"
+          >${{ headerData.data.market_cap_change_percentage_24h_usd.toFixed(3) }}T</span
+        >
         <span class="font-bold flex items-center gap-1 text-red-500">
           <svg
             stroke="currentColor"
@@ -36,6 +38,7 @@
     </p>
     <p class="flex items-center gap-1">
       <span class="text-[#6F7188]">Dominance:</span>
+
       <span class="font-bold text-[#4D4F5C]">BTC 56.1%</span>
       <span class="font-bold text-[#4D4F5C]">ETH 13.8%</span>
     </p>
