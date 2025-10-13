@@ -1,1 +1,6 @@
 @import 'tailwindcss';
+
+.apexcharts-text.apexcharts-yaxis-label,
+apexcharts-yaxis {
+  display: none !important;
+}

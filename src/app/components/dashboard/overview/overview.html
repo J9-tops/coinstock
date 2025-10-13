@@ -35,13 +35,53 @@
         </label>
       </div>
     </div>
-    <div class="mt-4">
-      <article class="flex flex-col gap-1">
-        <section class="border border-solid border-[#F2F2F2] rounded-lg px-3 py-2.5 w-fit">
-          <h3 class="font-bold text-[#141623] text-lg">$3,154,567,234</h3>
-          <p class="font-medium text-[#6C7288] text-sm">
-            Market Cap
-            <span class="font-bold inline-flex items-center gap-1 text-red-500">
+    <div class="mt-4 grid grid-cols-1 lg:grid-cols-3 gap-4">
+      <article class="flex flex-col gap-1 h-full">
+        <section
+          class="border border-solid border-[#F2F2F2] rounded-lg px-3 py-2.5 h-1/2 flex justify-between"
+        >
+          <div class="flex flex-col gap-1 justify-center">
+            <h3 class="font-bold text-[#141623] text-lg">$3,154,567,234</h3>
+            <p class="font-medium text-[#6C7288] text-sm">
+              Market Cap
+              <span class="font-bold inline-flex items-center gap-1 text-red-500">
+                <svg
+                  stroke="currentColor"
+                  fill="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 24 24"
+                  height="10px"
+                  width="10px"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M20.118 3h-16.225a2.914 2.914 0 0 0 -2.503 4.371l8.116 13.549a2.917 2.917 0 0 0 4.987 .005l8.11 -13.539a2.914 2.914 0 0 0 -2.486 -4.386z"
+                  ></path>
+                </svg>
+                0.7%</span
+              >
+            </p>
+          </div>
+          <app-area-chart></app-area-chart>
+        </section>
+        <section
+          class="border border-solid border-[#F2F2F2] rounded-lg px-3 py-2.5 h-1/2 flex flex-col gap-1 justify-center"
+        >
+          <h3 class="font-bold text-[#141623] text-lg">$2,743,432</h3>
+          <p class="font-medium text-[#6C7288] text-sm">24h Trading Volume</p>
+        </section>
+      </article>
+      <article class="border border-solid border-[#F2F2F2] rounded-lg px-3 py-2.5">
+        <h3 class="font-bold text-[#141623] text-lg">🔥 Trending</h3>
+
+        <div class="font-medium text-sm flex items-center gap-1.5 justify-between">
+          <p class="text-[#141623] font-medium flex items-center gap-1.5">
+            <img src="/memecore.png" alt="memecore" class="w-10" />
+            <span>MemeCore</span>
+          </p>
+          <p>
+            $2,623.12
+            <span class="ml-2 font-bold inline-flex items-center gap-1 text-green-500">
               <svg
                 stroke="currentColor"
                 fill="currentColor"
@@ -52,17 +92,142 @@
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M20.118 3h-16.225a2.914 2.914 0 0 0 -2.503 4.371l8.116 13.549a2.917 2.917 0 0 0 4.987 .005l8.11 -13.539a2.914 2.914 0 0 0 -2.486 -4.386z"
+                  d="M12 1.67a2.914 2.914 0 0 0 -2.492 1.403l-8.11 13.537a2.914 2.914 0 0 0 2.484 4.385h16.225a2.914 2.914 0 0 0 2.503 -4.371l-8.116 -13.546a2.917 2.917 0 0 0 -2.494 -1.408z"
                 ></path>
               </svg>
               0.7%</span
             >
           </p>
-        </section>
-        <section class="border border-solid border-[#F2F2F2] rounded-lg px-3 py-2.5 w-fit">
-          <h3 class="font-bold text-[#141623] text-lg">$2,743,432</h3>
-          <p class="font-medium text-[#6C7288] text-sm">24h Trading Volume</p>
-        </section>
+        </div>
+        <div class="font-medium text-sm flex items-center gap-1.5 justify-between">
+          <p class="text-[#141623] font-medium flex items-center gap-1.5">
+            <img src="/memecore.png" alt="memecore" class="w-10" />
+            <span>MemeCore</span>
+          </p>
+          <p>
+            $2,623.12
+            <span class="ml-2 font-bold inline-flex items-center gap-1 text-green-500">
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 24 24"
+                height="10px"
+                width="10px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 1.67a2.914 2.914 0 0 0 -2.492 1.403l-8.11 13.537a2.914 2.914 0 0 0 2.484 4.385h16.225a2.914 2.914 0 0 0 2.503 -4.371l-8.116 -13.546a2.917 2.917 0 0 0 -2.494 -1.408z"
+                ></path>
+              </svg>
+              0.7%</span
+            >
+          </p>
+        </div>
+        <div class="font-medium text-sm flex items-center gap-1.5 justify-between">
+          <p class="text-[#141623] font-medium flex items-center gap-1.5">
+            <img src="/memecore.png" alt="memecore" class="w-10" />
+            <span>MemeCore</span>
+          </p>
+          <p>
+            $2,623.12
+            <span class="ml-2 font-bold inline-flex items-center gap-1 text-green-500">
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 24 24"
+                height="10px"
+                width="10px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 1.67a2.914 2.914 0 0 0 -2.492 1.403l-8.11 13.537a2.914 2.914 0 0 0 2.484 4.385h16.225a2.914 2.914 0 0 0 2.503 -4.371l-8.116 -13.546a2.917 2.917 0 0 0 -2.494 -1.408z"
+                ></path>
+              </svg>
+              0.7%</span
+            >
+          </p>
+        </div>
+      </article>
+      <article class="border border-solid border-[#F2F2F2] rounded-lg px-3 py-2.5">
+        <h3 class="font-bold text-[#141623] text-lg">🚀 Top Gainers</h3>
+
+        <div class="font-medium text-sm flex items-center gap-1.5 justify-between">
+          <p class="text-[#141623] font-medium flex items-center gap-1.5">
+            <img src="/memecore.png" alt="memecore" class="w-10" />
+            <span>MemeCore</span>
+          </p>
+          <p>
+            $2,623.12
+            <span class="ml-2 font-bold inline-flex items-center gap-1 text-green-500">
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 24 24"
+                height="10px"
+                width="10px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 1.67a2.914 2.914 0 0 0 -2.492 1.403l-8.11 13.537a2.914 2.914 0 0 0 2.484 4.385h16.225a2.914 2.914 0 0 0 2.503 -4.371l-8.116 -13.546a2.917 2.917 0 0 0 -2.494 -1.408z"
+                ></path>
+              </svg>
+              0.7%</span
+            >
+          </p>
+        </div>
+        <div class="font-medium text-sm flex items-center gap-1.5 justify-between">
+          <p class="text-[#141623] font-medium flex items-center gap-1.5">
+            <img src="/memecore.png" alt="memecore" class="w-10" />
+            <span>MemeCore</span>
+          </p>
+          <p>
+            $2,623.12
+            <span class="ml-2 font-bold inline-flex items-center gap-1 text-green-500">
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 24 24"
+                height="10px"
+                width="10px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 1.67a2.914 2.914 0 0 0 -2.492 1.403l-8.11 13.537a2.914 2.914 0 0 0 2.484 4.385h16.225a2.914 2.914 0 0 0 2.503 -4.371l-8.116 -13.546a2.917 2.917 0 0 0 -2.494 -1.408z"
+                ></path>
+              </svg>
+              0.7%</span
+            >
+          </p>
+        </div>
+        <div class="font-medium text-sm flex items-center gap-1.5 justify-between">
+          <p class="text-[#141623] font-medium flex items-center gap-1.5">
+            <img src="/memecore.png" alt="memecore" class="w-10" />
+            <span>MemeCore</span>
+          </p>
+          <p>
+            $2,623.12
+            <span class="ml-2 font-bold inline-flex items-center gap-1 text-green-500">
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 24 24"
+                height="10px"
+                width="10px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 1.67a2.914 2.914 0 0 0 -2.492 1.403l-8.11 13.537a2.914 2.914 0 0 0 2.484 4.385h16.225a2.914 2.914 0 0 0 2.503 -4.371l-8.116 -13.546a2.917 2.917 0 0 0 -2.494 -1.408z"
+                ></path>
+              </svg>
+              0.7%</span
+            >
+          </p>
+        </div>
       </article>
     </div>
   </div>

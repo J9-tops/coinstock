@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { AreaChart } from '../area-chart/area-chart';
 
 @Component({
   selector: 'overview',
-  imports: [],
+  imports: [AreaChart],
   templateUrl: './overview.html',
   styleUrl: './overview.css',
 })
