@@ -4,6 +4,7 @@
   <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
       <tr>
+        <th scope="col" class="px-6 py-3">#</th>
         <th scope="col" class="px-6 py-3">Coin</th>
         <th scope="col" class="px-6 py-3">Price</th>
         <th scope="col" class="px-6 py-3">1h</th>
@@ -17,130 +18,110 @@
     <tbody>
       <tr
         class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600"
+        *ngFor="let coin of marketData"
       >
+        <td class="px-6 py-4">{{ coin.market_cap_rank }}</td>
         <th
           scope="row"
           class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
         >
-          Apple MacBook Pro 17"
+          <p class="text-[#141623] font-medium flex items-center gap-1.5">
+            <img src="{{ coin.image }}" alt="{{ coin.name }}" class="w-8" />
+            <span>{{ coin.name }}</span>
+          </p>
         </th>
-        <td class="px-6 py-4">Silver</td>
-        <td class="px-6 py-4">Laptop</td>
-        <td class="px-6 py-4">$2999</td>
+        <td class="px-6 py-4">${{ coin.current_price }}</td>
         <td class="px-6 py-4">
-          <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+          <span
+            class="ml-2 font-bold inline-flex items-center gap-1"
+            [ngClass]="{
+              'text-green-500': coin.price_change_percentage_1h_in_currency! >= 0,
+              'text-red-500': coin.price_change_percentage_1h_in_currency! < 0,
+            }"
+          >
+            <svg
+              stroke="currentColor"
+              fill="currentColor"
+              stroke-width="0"
+              viewBox="0 0 24 24"
+              height="10px"
+              width="10px"
+              xmlns="http://www.w3.org/2000/svg"
+              [ngStyle]="{
+                transform:
+                  coin.price_change_percentage_1h_in_currency! < 0 ? 'rotate(180deg)' : 'none',
+              }"
+            >
+              <path
+                d="M12 1.67a2.914 2.914 0 0 0 -2.492 1.403l-8.11 13.537a2.914 2.914 0 0 0 2.484 4.385h16.225a2.914 2.914 0 0 0 2.503 -4.371l-8.116 -13.546a2.917 2.917 0 0 0 -2.494 -1.408z"
+              ></path>
+            </svg>
+            {{ coin.price_change_percentage_1h_in_currency?.toFixed(2) }}%
+          </span>
         </td>
-      </tr>
-      <tr
-        class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600"
-      >
-        <th
-          scope="row"
-          class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-        >
-          Microsoft Surface Pro
-        </th>
-        <td class="px-6 py-4">White</td>
-        <td class="px-6 py-4">Laptop PC</td>
-        <td class="px-6 py-4">$1999</td>
         <td class="px-6 py-4">
-          <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+          <span
+            class="ml-2 font-bold inline-flex items-center gap-1"
+            [ngClass]="{
+              'text-green-500': coin.price_change_percentage_1h_in_currency! >= 0,
+              'text-red-500': coin.price_change_percentage_1h_in_currency! < 0,
+            }"
+          >
+            <svg
+              stroke="currentColor"
+              fill="currentColor"
+              stroke-width="0"
+              viewBox="0 0 24 24"
+              height="10px"
+              width="10px"
+              xmlns="http://www.w3.org/2000/svg"
+              [ngStyle]="{
+                transform:
+                  coin.price_change_percentage_1h_in_currency! < 0 ? 'rotate(180deg)' : 'none',
+              }"
+            >
+              <path
+                d="M12 1.67a2.914 2.914 0 0 0 -2.492 1.403l-8.11 13.537a2.914 2.914 0 0 0 2.484 4.385h16.225a2.914 2.914 0 0 0 2.503 -4.371l-8.116 -13.546a2.917 2.917 0 0 0 -2.494 -1.408z"
+              ></path>
+            </svg>
+            {{ coin.price_change_percentage_24h_in_currency?.toFixed(2) }}%
+          </span>
         </td>
-      </tr>
-      <tr
-        class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600"
-      >
-        <th
-          scope="row"
-          class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-        >
-          Magic Mouse 2
-        </th>
-        <td class="px-6 py-4">Black</td>
-        <td class="px-6 py-4">Accessories</td>
-        <td class="px-6 py-4">$99</td>
         <td class="px-6 py-4">
-          <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+          <span
+            class="ml-2 font-bold inline-flex items-center gap-1"
+            [ngClass]="{
+              'text-green-500': coin.price_change_percentage_1h_in_currency! >= 0,
+              'text-red-500': coin.price_change_percentage_1h_in_currency! < 0,
+            }"
+          >
+            <svg
+              stroke="currentColor"
+              fill="currentColor"
+              stroke-width="0"
+              viewBox="0 0 24 24"
+              height="10px"
+              width="10px"
+              xmlns="http://www.w3.org/2000/svg"
+              [ngStyle]="{
+                transform:
+                  coin.price_change_percentage_1h_in_currency! < 0 ? 'rotate(180deg)' : 'none',
+              }"
+            >
+              <path
+                d="M12 1.67a2.914 2.914 0 0 0 -2.492 1.403l-8.11 13.537a2.914 2.914 0 0 0 2.484 4.385h16.225a2.914 2.914 0 0 0 2.503 -4.371l-8.116 -13.546a2.917 2.917 0 0 0 -2.494 -1.408z"
+              ></path>
+            </svg>
+            {{ coin.price_change_percentage_7d_in_currency?.toFixed(2) }}%
+          </span>
         </td>
-      </tr>
-      <tr
-        class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600"
-      >
-        <th
-          scope="row"
-          class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-        >
-          Apple Watch
-        </th>
-        <td class="px-6 py-4">Black</td>
-        <td class="px-6 py-4">Watches</td>
-        <td class="px-6 py-4">$199</td>
+        <td class="px-6 py-4">${{ coin.total_volume.toLocaleString() }}</td>
+        <td class="px-6 py-4">${{ coin.market_cap.toLocaleString() }}</td>
         <td class="px-6 py-4">
-          <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-        </td>
-      </tr>
-      <tr
-        class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600"
-      >
-        <th
-          scope="row"
-          class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-        >
-          Apple iMac
-        </th>
-        <td class="px-6 py-4">Silver</td>
-        <td class="px-6 py-4">PC</td>
-        <td class="px-6 py-4">$2999</td>
-        <td class="px-6 py-4">
-          <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-        </td>
-      </tr>
-      <tr
-        class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600"
-      >
-        <th
-          scope="row"
-          class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-        >
-          Apple AirPods
-        </th>
-        <td class="px-6 py-4">White</td>
-        <td class="px-6 py-4">Accessories</td>
-        <td class="px-6 py-4">$399</td>
-        <td class="px-6 py-4">
-          <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-        </td>
-      </tr>
-      <tr
-        class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600"
-      >
-        <th
-          scope="row"
-          class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-        >
-          iPad Pro
-        </th>
-        <td class="px-6 py-4">Gold</td>
-        <td class="px-6 py-4">Tablet</td>
-        <td class="px-6 py-4">$699</td>
-        <td class="px-6 py-4">
-          <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-        </td>
-      </tr>
-      <tr
-        class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600"
-      >
-        <th
-          scope="row"
-          class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-        >
-          Magic Keyboard
-        </th>
-        <td class="px-6 py-4">Black</td>
-        <td class="px-6 py-4">Accessories</td>
-        <td class="px-6 py-4">$99</td>
-        <td class="px-6 py-4">
-          <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+          <img
+            [src]="'https://www.coingecko.com/coins/' + coin.market_cap_rank + '/sparkline.svg'"
+            [alt]="coin.name + ' sparkline'"
+          />
         </td>
       </tr>
     </tbody>
@@ -152,54 +133,34 @@
 >
   <ul class="inline-flex -space-x-px rtl:space-x-reverse text-sm h-8">
     <li>
-      <a
-        href="#"
-        class="flex items-center justify-center px-3 h-8 ms-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-        >Previous</a
+      <button
+        (click)="previousPage($event)"
+        [disabled]="currentPage === 1"
+        class="flex items-center justify-center px-3 h-8 ms-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white cursor-pointer"
       >
+        Previous
+      </button>
+    </li>
+    <li *ngFor="let page of pages">
+      <button
+        (click)="goToPage(page, $event)"
+        [ngClass]="{
+          'bg-blue-50 text-blue-600 border-blue-300': page === currentPage,
+          'bg-white text-gray-500 hover:bg-gray-100 hover:text-gray-700': page !== currentPage,
+        }"
+        class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white cursor-pointer"
+      >
+        {{ page }}
+      </button>
     </li>
     <li>
-      <a
-        href="#"
-        class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-        >1</a
+      <button
+        (click)="nextPage($event)"
+        [disabled]="!hasNextPage"
+        class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white cursor-pointer"
       >
-    </li>
-    <li>
-      <a
-        href="#"
-        class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-        >2</a
-      >
-    </li>
-    <li>
-      <a
-        href="#"
-        aria-current="page"
-        class="flex items-center justify-center px-3 h-8 text-blue-600 border border-gray-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white"
-        >3</a
-      >
-    </li>
-    <li>
-      <a
-        href="#"
-        class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-        >4</a
-      >
-    </li>
-    <li>
-      <a
-        href="#"
-        class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-        >5</a
-      >
-    </li>
-    <li>
-      <a
-        href="#"
-        class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-        >Next</a
-      >
+        Next
+      </button>
     </li>
   </ul>
 </nav>
