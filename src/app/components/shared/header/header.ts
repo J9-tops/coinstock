@@ -1,4 +1,6 @@
 import { GlobalService } from '@/app/services/global';
+import { GlobalData } from '@/app/types';
+import { toBillion, toTrillion } from '@/app/utils';
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 
@@ -9,30 +11,28 @@ import { Component, OnInit } from '@angular/core';
   styleUrl: './header.css',
 })
 export class Header implements OnInit {
-  headerData?: {
-    data?: {
-      active_cryptocurrencies: number;
-      upcoming_icos: number;
-      ended_icos: number;
-      markets: number;
-      total_market_cap: {
-        [key: string]: number;
-      };
-      total_volume: {
-        [key: string]: number;
-      };
-      market_cap_change_percentage_24h_usd: number;
-      updated_at: number;
-    };
-  };
+  headerData?: GlobalData;
+  marketCap: string | null = null;
+  volumeCap: string | null = null;
 
   constructor(private globalService: GlobalService) {}
+
+  get filteredMarketCapPercentage() {
+    const data = this.headerData?.data?.market_cap_percentage;
+    if (!data) return [];
+    return Object.entries(data)
+      .filter(([key]) => key === 'btc' || key === 'eth')
+      .map(([key, value]) => ({ key, value }));
+  }
 
   ngOnInit() {
     this.globalService.global('global').subscribe({
       next: (data) => {
-        console.log(data);
         this.headerData = data;
+        const usdCap = data?.data?.total_market_cap?.['usd'];
+        if (usdCap) this.marketCap = toTrillion(usdCap).toFixed(3);
+        const usdVolume = data?.data?.total_volume?.['usd'];
+        if (usdVolume) this.volumeCap = toBillion(usdVolume).toFixed(2);
       },
       error: (err) => console.log('Error fetching data:', err),
     });
