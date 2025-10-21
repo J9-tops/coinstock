@@ -35,6 +35,11 @@ app.use(
   }),
 );
 
+
+app.get('/', (req, res) => {
+  res.redirect(301, '/dashboard'); 
+});
+
 /**
  * Handle all other requests by rendering the Angular application.
  */
