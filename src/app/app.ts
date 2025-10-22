@@ -1,5 +1,5 @@
 import { Component, signal } from '@angular/core';
-import { Router, RouterOutlet } from '@angular/router';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,10 +9,4 @@ import { Router, RouterOutlet } from '@angular/router';
 })
 export class App {
   protected readonly title = signal('trade-scope');
-
-  constructor(private router: Router) {}
-
-  ngOnInit() {
-    this.router.navigate(['/dashboard']);
-  }
 }

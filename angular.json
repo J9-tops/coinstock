@@ -27,9 +27,7 @@
             "outputMode": "server",
             "ssr": {
               "entry": "src/server.ts"
-            },
-            "index": "src/app.html",
-            "outputPath": "dist/trade-scope"
+            }
           },
           "configurations": {
             "production": {
