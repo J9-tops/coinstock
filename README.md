@@ -1,59 +1,65 @@
-# TradeScope
+# CoinStock
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.5.
+Coinstock is a small, clean Angular application that demonstrates building a dashboard-driven UI for visualizing trading data. The project was generated with Angular CLI (v20.x) and contains a modular structure with components, pages, services, and utilities to make it easy to extend.
 
-## Development server
+This README highlights what the project contains, how to run it locally, and why it’s a good sample to show to employers.
 
-To start a local development server, run:
+## Project structure
 
-```bash
-ng serve
+- `src/app/` — main application code
+  - `components/` — reusable UI components (dashboard pieces, shared header/navbar)
+  - `pages/` — page-level components (e.g., dashboard)
+  - `services/` — global services (data, state, helpers)
+  - `types/` & `utils/` — shared types and helper functions
+- `src/environments/` — environment-specific configs
+- `public/` / `index.html` — static entry
+
+Open `src/app` to inspect component implementations and tests.
+
+## Quick start (run locally)
+
+These commands assume you have Node.js and the Angular CLI installed.
+
+1. Install dependencies
+
+```powershell
+npm install
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+2. Start the development server
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```powershell
+ng serve --open
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+or, if your package.json exposes a start script:
 
-```bash
-ng generate --help
+```powershell
+npm start
 ```
 
-## Building
+The app will be available at http://localhost:4200 and will hot-reload as you edit files.
 
-To build the project run:
+## Build for production
 
-```bash
-ng build
+```powershell
+ng build --configuration production
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Build output will be placed into the `dist/` folder by default.
 
-## Running unit tests
+## Tests
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+Run unit tests (Karma):
 
-```bash
+```powershell
 ng test
 ```
 
-## Running end-to-end tests
+Component-level spec files exist next to components (e.g., `area-chart.spec.ts`, `overview.spec.ts`). These are a good starting point to demonstrate test coverage during a review.
 
-For end-to-end (e2e) testing, run:
+## What to look for in the code (tips for reviewers / employers)
 
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Component composition: small components assembled into pages (see `src/app/components/dashboard`).
+- Separation of concerns: services for data/business logic vs. components for presentation (`src/app/services`).
+- Environment configs: `src/environments` for build-time differences.
